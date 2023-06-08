@@ -33,6 +33,7 @@
             <th>#</th>
             <th>Username</th>
             <th>Name</th>
+            <th> Password </th>
         </tr>
     </thead>
     <tbody>
@@ -40,6 +41,7 @@
             <td>1</td>
             <td>admin@student.id</td>
             <td>Faker Name</td>
+            <td>password</td>
         </tr>
     </tbody>
 </table>
