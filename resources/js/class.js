@@ -142,9 +142,9 @@ $(document).ready(function() {
                                 </th>
                                 <td class="px-6 py-4">
                                     <div class="flex justify-start">
-                                        <button type="button"
-                                            class="bg-yellow-300 px-2 py-1 rounded-lg text-white hover:bg-white hover:text-black mr-2"
-                                            data-modal-target="edit-modal" data-modal-toggle="edit-modal">
+                                    <button type="button"
+                                        class="bg-yellow-300 px-2 py-1 rounded-lg text-white hover:bg-white hover:text-black mr-2 edit-button"
+                                        data-id="${value.id}">
                                             <i class="fas fa-pen"> </i>
                                         </button>
                                         <button type="button"

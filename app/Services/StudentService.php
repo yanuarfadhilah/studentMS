@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Students;
 use App\Models\Classes;
+use Illuminate\Support\Facades\Redis;
 
 class StudentService implements StudentServiceContract
 {
@@ -15,7 +16,9 @@ class StudentService implements StudentServiceContract
     public function deleteStudent($id = 0)
     {
         $student = Students::find($id);
+        $redis = Redis::connection();
         if ($student) {
+            $redis->del($student->name.'_'.$student->class_id.'_'.$student->level.'_'.$student->parent_phone_number);
             $student->delete();
             return true;
         } else {
@@ -44,6 +47,8 @@ class StudentService implements StudentServiceContract
         if ($isUpdate) {
             $student = Students::find($input['id']);
             if ($student) {
+                $redis = Redis::connection();
+                $redis->del($student->name.'_'.$student->class_id.'_'.$student->level.'_'.$student->parent_phone_number);
                 $student->name = $input['name'];
                 $student->class_id = $input['class_id'];
                 $student->level = $input['level'];
