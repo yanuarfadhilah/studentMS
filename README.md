@@ -22,8 +22,6 @@
         DB_PASSWORD=
     </li>
     <li> execute php artisan migrate:refresh --seed to migrate all table and seeding database </li>
-    <li> execute php artisan passport:install to create encryption key </li>
-    <li> execute php artisan vendor:publish --tag=passport-config to publish configuration </li>
     <li> execute npm run dev </li>
     <li> execute php artisan serve </li>
 <ol>
